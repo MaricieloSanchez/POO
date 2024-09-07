@@ -16,6 +16,7 @@ public class FrmCalculadora extends javax.swing.JFrame {
     public FrmCalculadora() {
         initComponents();
     }
+    Operaciones  oper = new Operaciones();
     String valor1;
     String valor2;
     String op;
@@ -24,19 +25,19 @@ public class FrmCalculadora extends javax.swing.JFrame {
         valor2 = txt_resultado.getText();
         if (op == "+")
         {
-            txt_resultado.setText(String.valueOf(Integer.parseInt(valor1) + Integer.parseInt(valor2)));
+            txt_resultado.setText(oper.suma(Integer.parseInt(valor1),Integer.parseInt(valor2)));
         }
         else if (op == "-")
         {
-            txt_resultado.setText(String.valueOf(Integer.parseInt(valor1) - Integer.parseInt(valor2)));
+            txt_resultado.setText(oper.resta(Integer.parseInt(valor1),Integer.parseInt(valor2)));
         }
         else if (op == "x")
         {
-            txt_resultado.setText(String.valueOf(Integer.parseInt(valor1) * Integer.parseInt(valor2)));
+            txt_resultado.setText(oper.multiplicacion(Integer.parseInt(valor1),Integer.parseInt(valor2)));
         }
         else if (op == "/")
         {
-            txt_resultado.setText(String.valueOf(Integer.parseInt(valor1) / Integer.parseInt(valor2)));
+            txt_resultado.setText(oper.division(Integer.parseInt(valor1),Integer.parseInt(valor2)));
         }
     }
     @SuppressWarnings("unchecked")
